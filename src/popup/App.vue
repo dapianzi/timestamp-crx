@@ -19,6 +19,7 @@
                     <a-input placeholder="stamp" v-model="stamp" />
                 </a-form-item>
             </a-form>
+            <a-divider>Dapianzi Carl · <a target="__blank" href="https://github.com/dapianzi/timestamp-crx">Github</a></a-divider>
         </a-card>
     </div>
 </template>

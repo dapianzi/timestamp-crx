@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import { Card,Form,Checkbox,Input,FormModel,DatePicker } from 'ant-design-vue';
+import { Card,Form,Checkbox,Input,FormModel,DatePicker,Divider } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 
 // import 'ant-design-vue/lib/base/style'
@@ -16,7 +16,7 @@ Vue.use(Form);
 Vue.use(Input);
 Vue.use(FormModel);
 Vue.use(DatePicker);
-
+Vue.use(Divider);
 
 import App from './App'
 
