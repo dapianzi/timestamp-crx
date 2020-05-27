@@ -2,10 +2,9 @@
     "plugins": [
         "@babel/plugin-proposal-optional-chaining",
         [
-            "import", { 
-                "libraryName": "antd", 
-                "libraryDirectory": "es", 
-                "style": "css" 
+            "import", {
+                "libraryName": "ant-design-vue",
+                "style": true   // or 'css'
             }
         ]
     ],

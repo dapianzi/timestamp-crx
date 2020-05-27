@@ -12,7 +12,7 @@ const config = {
   entry: {
     'background': './background.js',
     'popup/popup': './popup/popup.js',
-    'options/options': './options/options.js',
+    // 'options/options': './options/options.js',
   },
   output: {
     path: __dirname + '/dist',
@@ -43,6 +43,25 @@ const config = {
       {
         test: /\.sass$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader?indentedSyntax'],
+      },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader, 
+          'css-loader', 
+          {
+            loader: 'less-loader', // compiles Less to CSS
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  'screen-xs': '200px',
+                  'screen-sm': '300px',
+                },
+                javascriptEnabled: true,
+              }
+            },
+          }
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
@@ -77,7 +96,7 @@ const config = {
     new CopyPlugin([
       { from: 'icons', to: 'icons', ignore: ['icon.xcf'] },
       { from: 'popup/popup.html', to: 'popup/popup.html', transform: transformHtml },
-      { from: 'options/options.html', to: 'options/options.html', transform: transformHtml },
+      // { from: 'options/options.html', to: 'options/options.html', transform: transformHtml },
       {
         from: 'manifest.json',
         to: 'manifest.json',
